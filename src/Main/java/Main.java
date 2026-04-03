@@ -80,8 +80,33 @@ public class Main{
                 }
                 break;
 
+            case 3:
+                System.out.println("\n==== Itens na Mochila ====\n");
 
+                if (totalItens == 0){
+                    System.out.println("Mochila vazia!");
+                } else {
+                    System.out.println("Nome | Tipo | Quantidade");
+                    System.out.println("------------");
+
+                    for (int i = 0; i < totalItens; i++){
+                        System.out.println(
+                                mochila[i].nome + " | " +
+                                mochila[i].tipo + " | " +
+                                mochila[i].quantidade
+                        );
+                    }
+                }
+                break;
+
+            case 0:
+                System.out.println("Saindo...");
+                break;
+
+            default:
+                System.out.println("Opção inválida!");
         }
+
         } while (opcao != 0);
 
         input.close();
