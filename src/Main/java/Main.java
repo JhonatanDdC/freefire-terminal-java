@@ -58,27 +58,19 @@ public class Main{
                 System.out.println("Digite o nome do item para remover: ");
                 String nomeRemover = input.nextLine();
 
-                int espaco = -1;
+                boolean encontrado = false;
 
                 for (int i = 0; i < totalItens; i++){
                     if (mochila[i].nome.equalsIgnoreCase(nomeRemover)){
-                        espaco = i;
-                    }
-
-                    // Mover itens
-                    if (espaco != -1){
-                        for (int j = espaco; j < totalItens -1; j++) {
-                            mochila[j] = mochila[j + 1];
-                        }
-
                         totalItens--;
+                        encontrado = true;
                         System.out.println("Item removido!");
-
-                    } else {
-                        System.out.println("Item não encontrado!");
+                        break;
                     }
                 }
-                break;
+                if (!encontrado){
+                    System.out.println("Item não encontrado!");
+                }
 
             case 3:
                 System.out.println("\n==== Itens na Mochila ====\n");
